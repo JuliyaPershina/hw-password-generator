@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'JetBrains Mono Variable';
+    src: url(./assets/fonts/JetBrainsMono-VariableFont_wght.ttf) format('truetype');
+    font-weight: 100 800;
+    font-style: normal;
+}
+
+body {
+    font-family: 'JetBrains Mono Variable', monospace;
+}
