@@ -85,7 +85,7 @@ function generatePassword() {
 
   if (!availableCharacters.length) {
     passwordInput.value = '';
-    passwordInput.style.opacity = '0.5';
+    // passwordInput.style.opacity = '0.25';
     return;
   }
 }

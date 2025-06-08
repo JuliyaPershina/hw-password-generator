@@ -83,6 +83,7 @@ h1 {
 
 input::placeholder {
   color: var(--almostWhite);
+  opacity: 0.25;
 }
 input::-webkit-input-placeholder {
   color: var(--almostWhite);
@@ -261,3 +262,8 @@ input[type='checkbox']:checked::before {
   color: var(--darkGrey);
   text-transform: uppercase;
 }
+
+.copy svg path:hover {
+  fill: var(--almostWhite);
+}
+
