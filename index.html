@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Password generator app</title>
-  <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  Password Generator
+    <title>Password generator app</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Password Generator</h1>
+    <div class="wrapper">
+      <div class="generated-password">
+        <input
+          type="text"
+          id="generated-password"
+          readonly
+          placeholder="P4$5W0rD!"
+          disabled
+        />
+        <button class="copy">
+          <img src="./assets/images/icon-copy.svg" alt="" />
+        </button>
+      </div>
 
-  P4$5W0rD!
+      <div class="wrapper-bottom">
+        <label class="length" for="custom-range">Character Length: <span id="range-value">50</span>
+        </label>
+        <input type="range" id="custom-range" name="custom-range" min="0" max="20" value="10" step="0.1"/>
+        
+        <div class="check-items">
+          <label
+            ><input type="checkbox" id="uppercase" checked /> Include Uppercase
+            Letters</label
+          >
+          <label
+            ><input type="checkbox" id="lowercase" checked /> Include Lowercase
+            Letters</label
+          >
+          <label
+            ><input type="checkbox" id="numbers" checked /> Include
+            Numbers</label
+          >
+          <label><input type="checkbox" id="symbols" /> Include Symbols</label>
+        </div>
 
-  Character Length
+        <div class="strength">
+          <p>Strength:</p>
+          <div class="strength-indicator">
+            <p id="strength-text">Medium</p>
+            <div class="indicators-container">
+              <div class="box" data-index="0"></div>
+              <div class="box" data-index="1"></div>
+              <div class="box" data-index="2"></div>
+              <div class="box" data-index="3"></div>
+            </div>
+          </div>
+        </div>
 
-  Include Uppercase Letters
-  Include Lowercase Letters
-  Include Numbers
-  Include Symbols
-
-  Strength
-
-  Generate
-
-</body>
+        <button id="generate-button">Generate</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
 </html>
+
+<!-- Password Generator P4$5W0rD! Character Length Include Uppercase Letters Include
+Lowercase Letters Include Numbers Include Symbols Strength Generate -->
