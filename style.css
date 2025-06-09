@@ -71,6 +71,16 @@ h1 {
     flex-shrink: 0;
   }
 }
+.copy svg path {
+  fill: var(--neonGreen);
+  transition: fill 0.5s ease-in-out;
+}
+.copy:hover {
+  svg path {
+    fill: var(--almostWhite);
+  }
+}
+
 .wrapper-bottom {
   flex-direction: column;
   align-items: start;
@@ -85,6 +95,8 @@ h1 {
   font-size: 32px;
   line-height: 42px;
   box-sizing: border-box;
+  max-width: 442px;
+  min-width: 0;
 }
 
 input::placeholder {
@@ -139,15 +151,28 @@ input[type='range'] {
 }
 
 /* WebKit (Chrome, Safari) */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   height: 28px;
   width: 28px;
-  background: var(--neonGreen);
+  background: var(--almostWhite);
   border-radius: 50%;
   cursor: pointer;
   margin-top: -10px;
+  transition: background 0.5s ease, border 0.5s ease;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  background: var(--veryDarkGrey);
+  border: 1px solid var(--neonGreen);
 }
 
 input[type='range']::-webkit-slider-runnable-track {
@@ -156,13 +181,20 @@ input[type='range']::-webkit-slider-runnable-track {
   background: transparent;
 }
 
-/* Firefox */
+/* === Firefox === */
 input[type='range']::-moz-range-thumb {
   height: 28px;
   width: 28px;
-  background: var(--neonGreen);
+  background: var(--almostWhite);
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.5s ease, border 0.5s ease;
+  border: none;
+}
+
+input[type='range']::-moz-range-thumb:hover {
+  background: var(--veryDarkGrey);
+  border: 1px solid var(--neonGreen);
 }
 
 input[type='range']::-moz-range-track {
@@ -171,13 +203,20 @@ input[type='range']::-moz-range-track {
   background: transparent;
 }
 
-/* IE and Edge Legacy */
+/* === Microsoft Edge / IE (legacy) === */
 input[type='range']::-ms-thumb {
   height: 28px;
   width: 28px;
-  background: var(--neonGreen);
+  background: var(--almostWhite);
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.5s ease, border 0.5s ease;
+  border: none;
+}
+
+input[type='range']::-ms-thumb:hover {
+  background: var(--veryDarkGrey);
+  border: 1px solid var(--neonGreen);
 }
 
 input[type='range']::-ms-track {
@@ -187,6 +226,7 @@ input[type='range']::-ms-track {
   border-color: transparent;
   color: transparent;
 }
+
 /* </fold> */
 
 label {
@@ -267,11 +307,26 @@ input[type='checkbox']:checked::before {
   background: var(--neonGreen);
   color: var(--darkGrey);
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  border: 2px solid transparent;
+  transition: all 0.5s ease-in-out;
+  svg path {
+    transition: fill 0.5s ease-in-out;
+    fill: var(--darkGrey);
+  }
+  &:hover {
+    background: var(--darkGrey);
+    color: var(--neonGreen);
+    border: 2px solid var(--neonGreen);
+    svg path {
+      fill: var(--neonGreen);
+    }
+  }
 }
 
-.copy svg path:hover {
-  fill: var(--almostWhite);
-}
 
 @media (max-width: 470px) {
   body {
@@ -300,6 +355,28 @@ input[type='checkbox']:checked::before {
   .generated-password input {
     font-size: 24px;
     line-height: 32px;
+    max-width: 282px;
+  }
+
+  .copy svg {
+    width: 18px;
+    height: 20px;
+  }
+
+  .check-items {
+    gap: 16px;
+  }
+  .strength {
+    height: 56px;
+    padding-inline: 16px;
+    p {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+  #generate-button {
+    height: 56px;
+    gap: 16px;
   }
 
   label.length {
