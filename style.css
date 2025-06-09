@@ -31,9 +31,11 @@ body {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  padding-inline: 16px;
 }
 .wrapper {
-  width: 540px;
+  max-width: 540px;
+  width: 100%;
   max-height: 632px;
   height: 100%;
   margin-block: 32px;
@@ -54,18 +56,19 @@ h1 {
   background: var(--darkGrey);
   display: flex;
   align-items: center;
-  padding-inline-start: 32px;
-  padding-inline-end: 28px;
+  padding-inline: 32px;
 }
 
 .generated-password {
   height: 80px;
+  width: 100%;
   margin-block-end: 24px;
   padding-block: 24px;
   justify-content: space-between;
   button {
     background-color: transparent;
     border: none;
+    flex-shrink: 0;
   }
 }
 .wrapper-bottom {
@@ -79,6 +82,9 @@ h1 {
   color: var(--almostWhite);
   cursor: not-allowed;
   border: none;
+  font-size: 32px;
+  line-height: 42px;
+  box-sizing: border-box;
 }
 
 input::placeholder {
@@ -87,15 +93,15 @@ input::placeholder {
 }
 input::-webkit-input-placeholder {
   color: var(--almostWhite);
+  opacity: 0.25;
 }
 input::-moz-placeholder {
   color: var(--almostWhite);
+  opacity: 0.25;
 }
 input:-ms-input-placeholder {
   color: var(--almostWhite);
-}
-input::-ms-input-placeholder {
-  color: var(--almostWhite);
+  opacity: 0.25;
 }
 
 .check-items {
@@ -267,3 +273,39 @@ input[type='checkbox']:checked::before {
   fill: var(--almostWhite);
 }
 
+@media (max-width: 470px) {
+  body {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .wrapper {
+    margin-block-start: 16px;
+  }
+
+  .generated-password,
+  .wrapper-bottom {
+    padding-inline: 16px;
+  }
+  .generated-password {
+    height: 64px;
+    margin-block-end: 16px;
+  }
+
+  h1 {
+    height: 21px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  .generated-password input {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  label.length {
+    span {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}

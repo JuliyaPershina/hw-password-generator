@@ -4,7 +4,6 @@ const boxes = document.querySelectorAll('.box');
 const button = document.getElementById('generate-button');
 const strengthText = document.getElementById('strength-text');
 const checkboxes = document.querySelectorAll("input[type='checkbox']");
-// const passwordInput = document.querySelector("input[type='text']");
 const passwordInput = document.getElementById('generated-password');
 console.dir(passwordInput);
 
@@ -85,7 +84,6 @@ function generatePassword() {
 
   if (!availableCharacters.length) {
     passwordInput.value = '';
-    // passwordInput.style.opacity = '0.25';
     return;
   }
 }
